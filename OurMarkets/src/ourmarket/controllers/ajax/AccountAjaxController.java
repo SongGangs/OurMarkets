@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ourmarket.models.User;
 import ourmarket.services.imp.UserServiceImp;
 
-/**
- * @Title:AccountAjaxController
- * @Description:
- * @author : SGang
- * @date : 2017Äê4ÔÂ28ÈÕ
+/***
+ * 
+ * Title:AccountAjaxController Description:
+ * 
+ * @author SGang
+ * @date 2017å¹´4æœˆ29æ—¥ä¸‹åˆ4:32:46
  */
 @Controller
 @RequestMapping("/Account")
@@ -28,9 +29,9 @@ public class AccountAjaxController {
 	public String Login(String username, String password) {
 		User user = userServiceImp.IdentifyLoginInfo(username, password);
 		if (user == null) {
-			return "ÕËºÅÃÜÂë²»ÕıÈ·";
+			return "ç™»é™†ä¿¡æ¯é”™è¯¯";
 		} else {
-			return "ÕËºÅÑéÖ¤Í¨¹ı";// ÓÃ»§ÖĞĞÄ
+			return "éªŒè¯é€šè¿‡";// è¿”å›ä¸ªäººä¸­å¿ƒ
 		}
 
 	}

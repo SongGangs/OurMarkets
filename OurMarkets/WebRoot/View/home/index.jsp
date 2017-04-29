@@ -14,11 +14,11 @@
 <meta http-equiv="description" content="This is my page">
 <title></title>
 <script src="/OurMarkets/JS/Common/jquery-1.10.2.min.js"></script>
-<script src="/OurMarkets/JS/Common/layer.js"></script>
+<script src="/OurMarkets/Resources/layer/layer.js"></script>
 <script src="/OurMarkets/JS/Common/jquery.validate.min.js"></script>
 <script src="/OurMarkets/JS/Common/bootstrapValidator.min.js"></script>
 <script src="/OurMarkets/JS/Account/Account.js"></script>
-<link href="/OurMarkets/CSS/Common/layer.css" rel="stylesheet" />
+<link href="/OurMarkets/Resources/layer/skin/default/layer.css" rel="stylesheet" />
 <link href="/OurMarkets/CSS/Account/Account.css" rel="stylesheet" />
 <link href="/OurMarkets/CSS/Common/bootstrap.min.css" rel="stylesheet" />
 <link href="/OurMarkets/CSS/Common/bootstrapValidator.min.css" rel="stylesheet" />

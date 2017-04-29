@@ -6,32 +6,32 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.User" table="User" catalog="secondhandsDB">
-        <id name="uid" type="java.lang.Integer">
+        <id name="uid" type="integer">
             <column name="uID" />
             <generator class="identity" />
         </id>
-        <property name="rid" type="java.lang.Integer">
+        <property name="rid" type="integer">
             <column name="rID" />
         </property>
-        <property name="imageListId" type="java.lang.Long">
+        <property name="imageListId" type="long">
             <column name="ImageListID" />
         </property>
-        <property name="unickName" type="java.lang.String">
+        <property name="unickName" type="string">
             <column name="uNickName" length="30" not-null="true" />
         </property>
-        <property name="uphone" type="java.lang.String">
+        <property name="uphone" type="string">
             <column name="uPhone" length="50" not-null="true" />
         </property>
-        <property name="uemial" type="java.lang.String">
+        <property name="uemial" type="string">
             <column name="uEmial" length="50" />
         </property>
-        <property name="ucredit" type="java.lang.Integer">
+        <property name="ucredit" type="integer">
             <column name="uCredit" />
         </property>
-        <property name="ugender" type="java.lang.Short">
+        <property name="ugender" type="short">
             <column name="uGender" />
         </property>
-        <property name="upassword" type="java.lang.String">
+        <property name="upassword" type="string">
             <column name="uPassword" length="16" not-null="true" />
         </property>
     </class>

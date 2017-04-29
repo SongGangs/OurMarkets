@@ -6,26 +6,26 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.Orders" table="Orders" catalog="secondhandsDB">
-        <id name="oid" type="java.lang.Integer">
+        <id name="oid" type="integer">
             <column name="oID" />
             <generator class="identity" />
         </id>
-        <property name="uid" type="java.lang.Integer">
+        <property name="uid" type="integer">
             <column name="uID" />
         </property>
-        <property name="gid" type="java.lang.Long">
+        <property name="gid" type="long">
             <column name="gID" />
         </property>
-        <property name="otime" type="java.sql.Timestamp">
+        <property name="otime" type="timestamp">
             <column name="oTime" length="19" not-null="true" />
         </property>
-        <property name="omoney" type="java.lang.Float">
+        <property name="omoney" type="float">
             <column name="oMoney" precision="12" scale="0" not-null="true" />
         </property>
-        <property name="ostate" type="java.lang.Short">
+        <property name="ostate" type="short">
             <column name="oState" not-null="true" />
         </property>
-        <property name="onum" type="java.lang.Integer">
+        <property name="onum" type="integer">
             <column name="oNum" not-null="true" />
         </property>
     </class>

@@ -6,14 +6,14 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.ImageLibrary" table="ImageLibrary" catalog="secondhandsDB">
-        <id name="imageId" type="java.lang.Long">
+        <id name="imageId" type="long">
             <column name="ImageID" />
             <generator class="identity" />
         </id>
-        <property name="imageListId" type="java.lang.Integer">
+        <property name="imageListId" type="integer">
             <column name="ImageListID" />
         </property>
-        <property name="imageSrc" type="java.lang.String">
+        <property name="imageSrc" type="string">
             <column name="ImageSrc" length="100" not-null="true" />
         </property>
     </class>

@@ -6,7 +6,7 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.ImageList" table="ImageList" catalog="secondhandsDB">
-        <id name="imageListId" type="java.lang.Long">
+        <id name="imageListId" type="long">
             <column name="ImageListID" />
             <generator class="identity" />
         </id>

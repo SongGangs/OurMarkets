@@ -6,17 +6,17 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.DetailMessage" table="DetailMessage" catalog="secondhandsDB">
-        <id name="dmId" type="java.lang.Long">
+        <id name="dmId" type="long">
             <column name="dmID" />
             <generator class="identity" />
         </id>
-        <property name="mid" type="java.lang.Integer">
+        <property name="mid" type="integer">
             <column name="mID" />
         </property>
-        <property name="mcontent" type="java.lang.String">
+        <property name="mcontent" type="string">
             <column name="mContent" length="100" not-null="true" />
         </property>
-        <property name="mtime" type="java.sql.Timestamp">
+        <property name="mtime" type="timestamp">
             <column name="mTime" length="19" not-null="true" />
         </property>
     </class>

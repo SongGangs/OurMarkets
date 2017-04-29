@@ -3,7 +3,15 @@ package ourmarket.models;
 /**
  * Adress entity. @author MyEclipse Persistence Tools
  */
-public class Adress extends AbstractAdress implements java.io.Serializable {
+
+public class Adress implements java.io.Serializable {
+
+	// Fields
+
+	private long aid;
+	private Integer uid;
+	private String ainfo;
+	private short astate;
 
 	// Constructors
 
@@ -12,13 +20,50 @@ public class Adress extends AbstractAdress implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Adress(String ainfo, Short astate) {
-		super(ainfo, astate);
+	public Adress(String ainfo, short astate) {
+		this.ainfo = ainfo;
+		this.astate = astate;
 	}
 
 	/** full constructor */
-	public Adress(Integer uid, String ainfo, Short astate) {
-		super(uid, ainfo, astate);
+	public Adress(Integer uid, String ainfo, short astate) {
+		this.uid = uid;
+		this.ainfo = ainfo;
+		this.astate = astate;
+	}
+
+	// Property accessors
+
+	public long getAid() {
+		return this.aid;
+	}
+
+	public void setAid(long aid) {
+		this.aid = aid;
+	}
+
+	public Integer getUid() {
+		return this.uid;
+	}
+
+	public void setUid(Integer uid) {
+		this.uid = uid;
+	}
+
+	public String getAinfo() {
+		return this.ainfo;
+	}
+
+	public void setAinfo(String ainfo) {
+		this.ainfo = ainfo;
+	}
+
+	public short getAstate() {
+		return this.astate;
+	}
+
+	public void setAstate(short astate) {
+		this.astate = astate;
 	}
 
 }

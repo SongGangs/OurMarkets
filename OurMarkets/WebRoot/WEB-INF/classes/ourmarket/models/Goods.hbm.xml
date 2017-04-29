@@ -6,41 +6,41 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.Goods" table="Goods" catalog="secondhandsDB">
-        <id name="gid" type="java.lang.Long">
+        <id name="gid" type="long">
             <column name="gID" />
             <generator class="identity" />
         </id>
-        <property name="uid" type="java.lang.Integer">
+        <property name="uid" type="integer">
             <column name="uID" />
         </property>
-        <property name="imageListId" type="java.lang.Long">
+        <property name="imageListId" type="long">
             <column name="ImageListID" />
         </property>
-        <property name="gname" type="java.lang.String">
+        <property name="gname" type="string">
             <column name="gName" length="30" not-null="true" />
         </property>
-        <property name="gnum" type="java.lang.Integer">
+        <property name="gnum" type="integer">
             <column name="gNum" not-null="true" />
         </property>
-        <property name="gviewNum" type="java.lang.Integer">
+        <property name="gviewNum" type="integer">
             <column name="gViewNum" />
         </property>
-        <property name="gproductTime" type="java.sql.Timestamp">
+        <property name="gproductTime" type="timestamp">
             <column name="gProductTime" length="19" not-null="true" />
         </property>
-        <property name="gtitle" type="java.lang.String">
+        <property name="gtitle" type="string">
             <column name="gTitle" length="30" not-null="true" />
         </property>
-        <property name="gprice" type="java.lang.Float">
+        <property name="gprice" type="float">
             <column name="gPrice" precision="12" scale="0" not-null="true" />
         </property>
-        <property name="gbrifeIntroduction" type="java.lang.String">
+        <property name="gbrifeIntroduction" type="string">
             <column name="gBrifeIntroduction" length="150" />
         </property>
-        <property name="gstate" type="java.lang.Short">
+        <property name="gstate" type="short">
             <column name="gState" not-null="true" />
         </property>
-        <property name="gtype" type="java.lang.Short">
+        <property name="gtype" type="short">
             <column name="gType" not-null="true" />
         </property>
     </class>

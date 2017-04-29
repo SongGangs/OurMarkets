@@ -7,10 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @Title:HomeController
- * @Description:
- * @author : SGang
- * @date : 2017Äê4ÔÂ28ÈÕ
+ * 
+ * Title:HomeController Description:
+ * 
+ * @author SGang
+ * @date 2017å¹´4æœˆ29æ—¥ä¸‹åˆ4:32:24
  */
 @Controller
 @RequestMapping("/Home")

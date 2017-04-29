@@ -141,17 +141,44 @@ $(function () {
             }
         });
     });
-    
-    $("#loginBtn").on("click", function(parameters) {
-        if ($("#login-from").valid()) {
-            //如果验证成功
-            $.post("/OurMarkets/Account/Login", {
-                uNickName: $("#login_username").val(),
-                uPassword: $("#login_password").val()
-            }, function (result) {
-                layer.msg(result, { title:"提示", icon: 5, time: 1000 });
-                alert(result);
-            });
-        } 
-    });
+
+	$("#loginBtn").on("click", function() {
+		if ($("#login-from").valid()) {
+			//如果验证成功
+			$.post("/OurMarkets/Account/Login",
+				{
+					uNickName : $("#login_username").val(),
+					uPassword : $("#login_password").val()
+				},
+				function(result) {
+					layer.msg(result, {
+						title : "提示",
+						icon : 5,
+						time : 1000
+					});
+					layer.closeAll('page');
+					alert(result);
+				});
+		}
+	});
+	
+	$("#registerBtn").on("click", function() {
+		//if ($("#login-from").valid()) {
+			//如果验证成功
+			$.post("/OurMarkets/Account/Login",
+				{
+					uNickName : $("#login_username").val(),
+					uPassword : $("#login_password").val()
+				},
+				function(data) {
+					layer.msg(data, {
+						title : "提示",
+						icon : 5,
+						time : 1000
+					});
+					layer.closeAll('page');
+					alert(data);
+				});
+		//}
+});
 });

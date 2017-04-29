@@ -5,11 +5,12 @@ package ourmarket.services;
 
 import ourmarket.models.User;
 
-/**
- * @Title:IUserService
- * @Description:UserµÄ·şÎñÀà½Ó¿Ú
- * @author : SGang
- * @date : 2017Äê4ÔÂ28ÈÕ
+/***
+ * 
+ * Title:IUserService Description:
+ * 
+ * @author SGang
+ * @date 2017å¹´4æœˆ29æ—¥ä¸‹åˆ4:18:17
  */
 public interface IUserService {
 	public boolean CheckuNickNameIsExist(String uNickName);
@@ -17,4 +18,6 @@ public interface IUserService {
 	public User AddUser(User user);
 
 	public User IdentifyLoginInfo(String uNickName, String uPassword);
+
+	public int GetIdByNickName(String uNickName);
 }

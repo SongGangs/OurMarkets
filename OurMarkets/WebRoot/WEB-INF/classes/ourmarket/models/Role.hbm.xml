@@ -6,11 +6,11 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.Role" table="Role" catalog="secondhandsDB">
-        <id name="rid" type="java.lang.Short">
+        <id name="rid" type="short">
             <column name="rID" />
             <generator class="identity" />
         </id>
-        <property name="rinfo" type="java.lang.String">
+        <property name="rinfo" type="string">
             <column name="rInfo" length="20" not-null="true" />
         </property>
     </class>

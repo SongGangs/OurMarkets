@@ -11,10 +11,11 @@ import ourmarket.models.User;
 import ourmarket.services.IUserService;
 
 /**
+ * 
  * @Title:UserServiceImp
- * @Description:UserµÄ·şÎñÀàÊµÏÖ
+ * @Description:
  * @author : SGang
- * @date : 2017Äê4ÔÂ28ÈÕ
+ * @date : 2017å¹´4æœˆ29æ—¥
  */
 @Service
 public class UserServiceImp implements IUserService {
@@ -26,7 +27,7 @@ public class UserServiceImp implements IUserService {
 	 * 
 	 * @see
 	 * ourmarket.services.IUserService#CheckuNickNameIsExist(java.lang.String)
-	 * ²é¿´ÓÃ»§ÃûÊÇ·ñ´æÔÚ
+	 * æ£€æŸ¥ç”¨æˆ·åæ˜¯å¦å­˜åœ¨
 	 */
 	@Override
 	public boolean CheckuNickNameIsExist(String uNickName) {
@@ -42,30 +43,50 @@ public class UserServiceImp implements IUserService {
 	 * (non-Javadoc)
 	 * 
 	 * @see ourmarket.services.IUserService#AddUser(ourmarket.models.User) //
-	 * Ìí¼ÓÓÃ»§
+	 * æ·»åŠ ç”¨æˆ·
 	 */
 	@Override
 	public User AddUser(User user) {
-		return userdao.save(user);
+		if (!CheckuNickNameIsExist(user.getUnickName())) {
+			return userdao.save(user);
+		} else {
+			return null;
+		}
+
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see ourmarket.services.IUserService#IdentifyLoginInfo(java.lang.String,
-	 * java.lang.String) ÑéÖ¤ÃÜÂëºÍÓÃ»§ÃûÊÇ·ñÕıÈ· Èç¹ûÕıÈ··µ»ØÓÃ»§ĞÅÏ¢ ²»ÕıÈ··µ»Ø¿Õ
+	 * java.lang.String) æ£€æŸ¥è´¦å·ä¿¡æ¯æ˜¯ä¸ªæ­£ç¡®
 	 */
 	@Override
 	public User IdentifyLoginInfo(String uNickName, String uPassword) {
 		if (CheckuNickNameIsExist(uNickName)) {
 			User user = (User) userdao.findByUnickName(uNickName).get(0);
-			if (user.getUpassword() == uPassword) {
+			if (user.getUpassword().equals(uPassword)) {
 				return user;
 			} else {
-				return new User();
+				return null;
 			}
 		} else {
-			return new User();
+			return null;
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see ourmarket.services.IUserService#GetIdByNickName(java.lang.String)
+	 * æ ¹æ®ç”¨æˆ·åæŸ¥æ‰¾ID
+	 */
+	@Override
+	public int GetIdByNickName(String uNickName) {
+		if (CheckuNickNameIsExist(uNickName)) {
+			return ((User) userdao.findByUnickName(uNickName).get(0)).getUid();
+		} else {
+			return 0;
 		}
 	}
 

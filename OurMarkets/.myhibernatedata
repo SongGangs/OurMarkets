@@ -1,7 +1,7 @@
 #MyEclipse Hibernate Properties
-#Fri Apr 28 22:50:22 CST 2017
+#Sat Apr 29 15:25:12 CST 2017
 genBasicCompId=false
-sessionFactoryName=ourmarket.hibernate.HibernateSessionFactory
+sessionFactoryName=pers.sg.kms.hibernate.HibernateSessionFactory
 profile=
 daoSFId=
 jndiPath=
@@ -9,13 +9,13 @@ detectM2M=false
 reStrategyClass=
 detectO2O=false
 springDaoFile=
-useJavaTypes=true
+useJavaTypes=false
 keyGenerator=identity
 genVersionTag=false
 sessionFactoryId=
 basePersistenceClass=
 genAnnotations=false
 reSettingsFile=
-configFile=/OurMarkets/src/hibernate.cfg.xml
+configFile=/KMS/src/hibernate.cfg.xml
 createConfigFile=true
-baseDaoClass=BaseHibernateDAO
+baseDaoClass=ourmarket.daos.BaseHibernateDAO

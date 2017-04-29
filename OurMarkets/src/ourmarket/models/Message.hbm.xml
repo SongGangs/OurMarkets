@@ -6,14 +6,14 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.Message" table="Message" catalog="secondhandsDB">
-        <id name="mid" type="java.lang.Integer">
+        <id name="mid" type="integer">
             <column name="mID" />
             <generator class="identity" />
         </id>
-        <property name="uid1" type="java.lang.Integer">
+        <property name="uid1" type="integer">
             <column name="uID1" not-null="true" />
         </property>
-        <property name="uid2" type="java.lang.Integer">
+        <property name="uid2" type="integer">
             <column name="uID2" not-null="true" />
         </property>
     </class>

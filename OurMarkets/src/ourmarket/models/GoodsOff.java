@@ -1,11 +1,20 @@
 package ourmarket.models;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * GoodsOff entity. @author MyEclipse Persistence Tools
  */
-public class GoodsOff extends AbstractGoodsOff implements java.io.Serializable {
+
+public class GoodsOff implements java.io.Serializable {
+
+	// Fields
+
+	private short goffId;
+	private Integer uid;
+	private long gid;
+	private String goffReason;
+	private Date goffTime;
 
 	// Constructors
 
@@ -14,13 +23,59 @@ public class GoodsOff extends AbstractGoodsOff implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public GoodsOff(String goffReason, Timestamp goffTime) {
-		super(goffReason, goffTime);
+	public GoodsOff(String goffReason, Date goffTime) {
+		this.goffReason = goffReason;
+		this.goffTime = goffTime;
 	}
 
 	/** full constructor */
-	public GoodsOff(Integer uid, Long gid, String goffReason, Timestamp goffTime) {
-		super(uid, gid, goffReason, goffTime);
+	public GoodsOff(Integer uid, long gid, String goffReason, Date goffTime) {
+		this.uid = uid;
+		this.gid = gid;
+		this.goffReason = goffReason;
+		this.goffTime = goffTime;
+	}
+
+	// Property accessors
+
+	public short getGoffId() {
+		return this.goffId;
+	}
+
+	public void setGoffId(short goffId) {
+		this.goffId = goffId;
+	}
+
+	public Integer getUid() {
+		return this.uid;
+	}
+
+	public void setUid(Integer uid) {
+		this.uid = uid;
+	}
+
+	public long getGid() {
+		return this.gid;
+	}
+
+	public void setGid(long gid) {
+		this.gid = gid;
+	}
+
+	public String getGoffReason() {
+		return this.goffReason;
+	}
+
+	public void setGoffReason(String goffReason) {
+		this.goffReason = goffReason;
+	}
+
+	public Date getGoffTime() {
+		return this.goffTime;
+	}
+
+	public void setGoffTime(Date goffTime) {
+		this.goffTime = goffTime;
 	}
 
 }

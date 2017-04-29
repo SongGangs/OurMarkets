@@ -6,23 +6,23 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.Comments" table="Comments" catalog="secondhandsDB">
-        <id name="commentId" type="java.lang.Integer">
+        <id name="commentId" type="integer">
             <column name="commentID" />
             <generator class="identity" />
         </id>
-        <property name="uid" type="java.lang.Integer">
+        <property name="uid" type="integer">
             <column name="uID" />
         </property>
-        <property name="imageListId" type="java.lang.Long">
+        <property name="imageListId" type="long">
             <column name="ImageListID" />
         </property>
-        <property name="gid" type="java.lang.Long">
+        <property name="gid" type="long">
             <column name="gID" />
         </property>
-        <property name="comments" type="java.lang.String">
+        <property name="comments" type="string">
             <column name="comments" length="100" not-null="true" />
         </property>
-        <property name="commentTime" type="java.sql.Timestamp">
+        <property name="commentTime" type="timestamp">
             <column name="commentTime" length="19" not-null="true" />
         </property>
     </class>

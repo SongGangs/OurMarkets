@@ -3,7 +3,13 @@ package ourmarket.models;
 /**
  * Role entity. @author MyEclipse Persistence Tools
  */
-public class Role extends AbstractRole implements java.io.Serializable {
+
+public class Role implements java.io.Serializable {
+
+	// Fields
+
+	private short rid;
+	private String rinfo;
 
 	// Constructors
 
@@ -13,7 +19,25 @@ public class Role extends AbstractRole implements java.io.Serializable {
 
 	/** full constructor */
 	public Role(String rinfo) {
-		super(rinfo);
+		this.rinfo = rinfo;
+	}
+
+	// Property accessors
+
+	public short getRid() {
+		return this.rid;
+	}
+
+	public void setRid(short rid) {
+		this.rid = rid;
+	}
+
+	public String getRinfo() {
+		return this.rinfo;
+	}
+
+	public void setRinfo(String rinfo) {
+		this.rinfo = rinfo;
 	}
 
 }

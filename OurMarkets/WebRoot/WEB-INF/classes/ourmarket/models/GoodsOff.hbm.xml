@@ -6,20 +6,20 @@
 -->
 <hibernate-mapping>
     <class name="ourmarket.models.GoodsOff" table="GoodsOff" catalog="secondhandsDB">
-        <id name="goffId" type="java.lang.Short">
+        <id name="goffId" type="short">
             <column name="gOffID" />
             <generator class="identity" />
         </id>
-        <property name="uid" type="java.lang.Integer">
+        <property name="uid" type="integer">
             <column name="uID" />
         </property>
-        <property name="gid" type="java.lang.Long">
+        <property name="gid" type="long">
             <column name="gID" />
         </property>
-        <property name="goffReason" type="java.lang.String">
+        <property name="goffReason" type="string">
             <column name="gOffReason" length="150" not-null="true" />
         </property>
-        <property name="goffTime" type="java.sql.Timestamp">
+        <property name="goffTime" type="timestamp">
             <column name="gOffTime" length="19" not-null="true" />
         </property>
     </class>
