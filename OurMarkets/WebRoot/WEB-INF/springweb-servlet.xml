@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-4.1.xsd 
+   http://www.springframework.org/schema/mvc 
+   http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+	<!-- 设置注解进行扫描的包 -->
+	<context:component-scan base-package="ourmarket.controllers">
+		<!-- 只扫描控制器 -->
+		<context:include-filter type="annotation"  expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 配置mvc注解驱动 -->
+	<mvc:annotation-driven />
+
+	<!-- 配置视图解析器 在控制器返回之后 根据返回结果和下面的prefix suf1fix进行拼接 从而决定使用哪个视图 -->
+	<bean
+		id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property
+			name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property
+			name="prefix"
+			value="/View/" />
+		<property
+			name="suffix"
+			value=".jsp" />
+	</bean>
+
+</beans>
