@@ -25,8 +25,10 @@ import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
 public class MessageUtilityImpl implements IMessageUtility {
 
 	private String url = "http://gw.api.taobao.com/router/rest?"; // 阿里服务网址ַ
-	private String AppKey = "23300902";
-	private String Security = "24c5befb62bed7917bf139b7d39d251d";
+	// private String AppKey = "23300902";
+	// private String Security = "24c5befb62bed7917bf139b7d39d251d";
+	private String AppKey = "23281692";
+	private String Security = "e767dfa2ce0a46ba554268dc720c7be6";
 	private static boolean IsHaveSend = false; // 是否已发送验证码 不设置为static的话会
 
 	/**
@@ -62,7 +64,8 @@ public class MessageUtilityImpl implements IMessageUtility {
 			req.setSmsFreeSignName("注册验证");
 			req.setSmsParamString(content);
 			req.setRecNum(phoneNumber);
-			req.setSmsTemplateCode("SMS_4720619");
+			// req.setSmsTemplateCode("SMS_4720619");
+			req.setSmsTemplateCode("SMS_3125049");
 			try {
 				AlibabaAliqinFcSmsNumSendResponse rsp = client.execute(req);
 				System.out.println(rsp.getBody());

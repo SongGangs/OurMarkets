@@ -45,6 +45,8 @@ public class MessageUtilityImplTest {
 	public void testSendSecurityCode() {
 		String phoneNumber = "18980741420";
 		assertNotNull(messageUtility.SendSecurityCode(phoneNumber));
+		phoneNumber = "15984872339";
+		assertNotNull(messageUtility.SendSecurityCode(phoneNumber));
 		phoneNumber = "1898074142";
 		assertNull(messageUtility.SendSecurityCode(phoneNumber));
 	}
