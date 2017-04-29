@@ -24,7 +24,7 @@ import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
 @Service
 public class MessageUtilityImpl implements IMessageUtility {
 
-	private String url = "http://gw.api.taobao.com/router/rest?"; // 阿里服务网址ַ
+	private String url = "http://gw.api.taobao.com/router/rest"; // 阿里服务网址ַ
 	// private String AppKey = "23300902";
 	// private String Security = "24c5befb62bed7917bf139b7d39d251d";
 	private String AppKey = "23281692";
@@ -79,8 +79,15 @@ public class MessageUtilityImpl implements IMessageUtility {
 		return null;
 	}
 
+	/**
+	 * 生成四位随机数
+	 * 
+	 * @return
+	 */
 	@SuppressWarnings("unused")
 	private String ProduceRandomSecurityCode() {
-		return String.valueOf((Math.random() * 9 + 1) * 100000);
+		int a = (int) (Math.random() * (9999 - 1000 + 1)) + 1000;
+		System.out.println(a);
+		return String.valueOf(a);
 	}
 }
