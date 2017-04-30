@@ -44,11 +44,14 @@ public class MessageUtilityImplTest {
 	@Test
 	public void testSendSecurityCode() {
 		String phoneNumber = "18980741420";
-		assertNotNull(messageUtility.SendSecurityCode(phoneNumber));
+		assertNotNull(messageUtility.SendSecurityCode(phoneNumber, "注册验证"));
+		assertNotNull(messageUtility.SendSecurityCode(phoneNumber, "身份验证"));
 		phoneNumber = "15984872339";
-		assertNotNull(messageUtility.SendSecurityCode(phoneNumber));
+		assertNotNull(messageUtility.SendSecurityCode(phoneNumber, "注册验证"));
+		assertNotNull(messageUtility.SendSecurityCode(phoneNumber, "身份验证"));
 		phoneNumber = "1898074142";
-		assertNull(messageUtility.SendSecurityCode(phoneNumber));
+		assertNull(messageUtility.SendSecurityCode(phoneNumber, "注册验证"));
+		assertNull(messageUtility.SendSecurityCode(phoneNumber, "身份验证"));
 	}
 
 }

@@ -24,12 +24,9 @@ import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
 @Service
 public class MessageUtilityImpl implements IMessageUtility {
 
-	private String url = "http://gw.api.taobao.com/router/rest"; // 阿里服务网址ַ
-	// private String AppKey = "23300902";
-	// private String Security = "24c5befb62bed7917bf139b7d39d251d";
-	private String AppKey = "23281692";
-	private String Security = "e767dfa2ce0a46ba554268dc720c7be6";
-	private static boolean IsHaveSend = false; // 是否已发送验证码 不设置为static的话会
+	private String url = "http://gw.api.taobao.com/router/rest"; // 阿里服务网址
+	private String AppKey = "23401777";
+	private String Security = "413bccbc7a9964b957c2e04940cc2369";
 
 	/**
 	 * 大陆手机号码11位数， 匹配格式：前三位固定格式+后8位任意数 此方法中前三位格式有： 13+任意数 15+除4的任意数 18+除1和4的任意数
@@ -46,48 +43,61 @@ public class MessageUtilityImpl implements IMessageUtility {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * 发送短信验证码
+	 * 用户注册时
+	 * 
+	 * 发送短信验证码 SecurityType
+	 * 
+	 * 为用户变更类型 只允许
+	 * 
+	 * 注册验证
+	 * 
+	 * 身份验证
 	 * 
 	 * @see
 	 * ourmarket.componet.IMessageUtility#SendSecurityCode(java.lang.String)
 	 */
 	@Override
-	public String SendSecurityCode(String phoneNumber) {
+	public String SendSecurityCode(String phoneNumber, String SecurityType) {
 		if (CheckPhoneNumberIsExist(phoneNumber)) {
-			String product = "测试机器";
+			String product = "测试机器";// 产品名称
+			String m_SecurityCode = generateRandomArray(6);// 验证码
 			// 短信模板的内容
-			String content = "{\"code\":\"" + ProduceRandomSecurityCode() + "\",\"product\":\"" + product + "\"}";
+			String content = "{\"code\":\"" + m_SecurityCode + "\",\"product\":\"" + product + "\"}";
 			TaobaoClient client = new DefaultTaobaoClient(url, AppKey, Security);
 			AlibabaAliqinFcSmsNumSendRequest req = new AlibabaAliqinFcSmsNumSendRequest();
 			req.setExtend("123456");
 			req.setSmsType("normal");
-			req.setSmsFreeSignName("注册验证");
+			req.setSmsFreeSignName(SecurityType);
 			req.setSmsParamString(content);
 			req.setRecNum(phoneNumber);
-			// req.setSmsTemplateCode("SMS_4720619");
-			req.setSmsTemplateCode("SMS_3125049");
+			req.setSmsTemplateCode("SMS_11350208");
 			try {
 				AlibabaAliqinFcSmsNumSendResponse rsp = client.execute(req);
 				System.out.println(rsp.getBody());
-				return rsp.getBody();
+				if (rsp.getBody().contains("\"success\":true"))
+					return m_SecurityCode;
 			} catch (Exception e) {
 				// TODO: handle exception
 				return null;
 			}
 		}
-
 		return null;
 	}
 
 	/**
-	 * 生成四位随机数
+	 * 随机生成 num位数字字符数组
 	 * 
+	 * @param num
 	 * @return
 	 */
-	@SuppressWarnings("unused")
-	private String ProduceRandomSecurityCode() {
-		int a = (int) (Math.random() * (9999 - 1000 + 1)) + 1000;
-		System.out.println(a);
-		return String.valueOf(a);
+	private String generateRandomArray(int num) {
+		String chars = "0123456789";
+		char[] rands = new char[num];
+		for (int i = 0; i < num; i++) {
+			int rand = (int) (Math.random() * 10);
+			rands[i] = chars.charAt(rand);
+		}
+		return String.valueOf(rands);
 	}
+
 }
