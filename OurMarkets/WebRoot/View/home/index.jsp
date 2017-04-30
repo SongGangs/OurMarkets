@@ -20,7 +20,7 @@
 <script src="/OurMarkets/JS/Account/Account.js"></script>
 <link href="/OurMarkets/Resources/layer/skin/default/layer.css" rel="stylesheet" />
 <link href="/OurMarkets/CSS/Account/Account.css" rel="stylesheet" />
-<link href="/OurMarkets/CSS/Common/bootstrap.min.css" rel="stylesheet" />
+<link href="/OurMarkets/Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/OurMarkets/CSS/Common/bootstrapValidator.min.css" rel="stylesheet" />
 
 </head>

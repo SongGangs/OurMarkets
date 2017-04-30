@@ -9,6 +9,7 @@
   </listener>
   <context-param>
     <param-name>contextConfigLocation</param-name>
+    <!-- 应用上下文配置文件 -->
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
   <listener>
@@ -59,6 +60,19 @@
     <servlet-name>default</servlet-name>
     <url-pattern>*.css</url-pattern>
   </servlet-mapping>
+  
+  <!-- 配置spring核心servlet --> 
+  <servlet>
+    <servlet-name>springRest</servlet-name>
+    <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springRest</servlet-name>
+    <url-pattern>/API/*</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>springMVC</servlet-name>
     <servlet-class>
@@ -66,6 +80,7 @@
         </servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>springMVC</servlet-name>
     <url-pattern>/</url-pattern>
