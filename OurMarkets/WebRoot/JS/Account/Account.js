@@ -1,4 +1,4 @@
-﻿/// <reference path="jquery-1.10.2.min.js" />
+﻿1/// <reference path="jquery-1.10.2.min.js" />
 /// <reference path="jquery.validate.min.js" />
 
 
@@ -47,7 +47,23 @@ $(function() {
 				validators : {
 					notEmpty : { /*非空提示*/
 						message : '用户名不能为空'
-					} /*最后一个没有逗号*/
+					},
+					stringLength : {
+						min : 4,
+						max : 30,
+						message : '用户名长度必须在4到30之间'
+					},
+					threshold : 4,  //有4字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，4字符以上才开始）
+					remote : { //ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}  
+						url : '/OurMarkets/API/Account/CheckuNickNameIsExist', //验证地址
+						message : '用户已存在', //提示消息
+						delay : 2000, //每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
+						type : 'POST', //请求方式
+					/**自定义提交数据，默认值提交当前input value*/
+					  data: {
+						  uNickName:$.trim($("#register_username").val())
+					  }
+					}
 				}
 			},
 			password : {
@@ -93,8 +109,23 @@ $(function() {
 					notEmpty : {
 						message : '短信验证码不能为空'
 					},
+					stringLength : {
+						min : 6,
+						max : 6,
+						message : '请输入正确长度的短信验证码'
+					},
+					numeric : {
+						message : '短信验证码只能为数字'
+					},
+					threshold : 6,
 					remote : {
-						//写短信对比验证逻辑
+						url : '/OurMarkets/API/Account/CheckSecurityCode', //验证地址
+						message : '短信验证码不正确', //提示消息
+						delay : 2000, //每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
+						type : 'POST', //请求方式
+						 data: {
+							 securityCode:$.trim($("#register_identifyCode").val())
+						  }
 					}
 				}
 			}
@@ -138,55 +169,64 @@ $(function() {
 			}
 		});
 	});
-
+	$("#querySecurityCodeBtn").on("click", function() {
+		$.post("/OurMarkets/API/Account/SendSecurityCode", {
+			phoneNumber : $("#register_phone").val()
+		}, function(data) {
+			if (data.msg == "success") {
+				layer.msg('短信验证码已发送', {
+					icon : 1,
+					time : 1000
+				});
+			} else {
+				layer.msg('短信验证码发送失败', {
+					icon : 5,
+					time : 1000
+				});
+			}
+		});
+	});
 	$("#loginBtn").on("click", function() {
 		if ($("#login-from").valid()) {
-			var mydata = '{"uNickName":"' + $("#login_username").val() + '","uPassword":"'
-				+ $('#login_password').val() + '"}';
-				//如果验证成功
-
+			//如果验证成功
 			$.post("/OurMarkets/API/Account/Login"
 				, {
-					uNickName : $("#login_username").val(),
+					uNickName : $.trim($("#login_username").val()),
 					uPassword : $('#login_password').val()
 				}
 				, function(data) {
-					// Successful requests get here
-					// Update the page elements
-					alert(data.msg);
+					if (data.msg == "success") {
+						layer.msg('身份验证通过', {
+							icon : 1,
+							time : 1000
+						});
+						layer.closeAll('page');
+					} else {
+						layer.msg('身份验证失败', {
+							icon : 5,
+							time : 1000
+						});
+					}
 				});
-		//			$.ajax({
-		//				data : "uNickName=" + $("#login_username").val() + "&uPassword=" + $("#login_password").val(),
-		//				//data:mydata,
-		//				type : "POST",
-		//				contentType : 'application/json;charset=utf-8',
-		//				dataType : 'json',
-		//				url : "/OurMarkets/Account/Login",
-		//				success:function(data){
-		//					alert(data.msg);
-		//				},
-		//				error:function(){
-		//					alert('System is wrong.');					
-		//				}
-		//			});
 		}
 	});
 
 	$("#registerBtn").on("click", function() {
-		//如果验证成功
-		$.post("/OurMarkets/Account/Login",
-			{
-				uNickName : $("#login_username").val(),
-				uPassword : $("#login_password").val()
-			},
-			function(data) {
-				layer.msg(data, {
-					title : "提示",
-					icon : 5,
-					time : 1000
+		if ($("#register-from").valid()) {
+			//如果验证成功
+			$.post("/OurMarkets/API/Account/Register",
+				{
+					uNickName : $.trim($("#register_username").val()),
+					uPassword : $("#register_password").val(),
+					uPhone : $("#register_phone").val()
+				},
+				function(data) {
+					layer.msg(data, {
+						icon : 5,
+						time : 1000
+					});
+					layer.closeAll('page');
 				});
-				layer.closeAll('page');
-				alert(data);
-			});
+		}
 	});
 });
