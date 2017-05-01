@@ -1,7 +1,7 @@
 package ourmarket.daos;
 
-import java.sql.Timestamp;
 import java.util.List;
+
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
 import org.hibernate.Transaction;
@@ -30,13 +30,15 @@ public class OrdersDAO extends BaseHibernateDAO {
 	public static final String UID = "uid";
 	public static final String GID = "gid";
 	public static final String OMONEY = "omoney";
-	public static final String OSTATE = "ostate";
+	public static final String OPAY_STATE = "opayState";
 	public static final String ONUM = "onum";
+	public static final String ONO = "ono";
+	public static final String OSEND_STATE = "osendState";
 
 	public void save(Orders transientInstance) {
 		log.debug("saving Orders instance");
 		try {
-			Transaction transaction=getSession().beginTransaction();
+			Transaction transaction = getSession().beginTransaction();
 			getSession().save(transientInstance);
 			transaction.commit();
 			log.debug("save successful");
@@ -49,7 +51,7 @@ public class OrdersDAO extends BaseHibernateDAO {
 	public void delete(Orders persistentInstance) {
 		log.debug("deleting Orders instance");
 		try {
-			Transaction transaction=getSession().beginTransaction();
+			Transaction transaction = getSession().beginTransaction();
 			getSession().delete(persistentInstance);
 			transaction.commit();
 			log.debug("delete successful");
@@ -107,12 +109,20 @@ public class OrdersDAO extends BaseHibernateDAO {
 		return findByProperty(OMONEY, omoney);
 	}
 
-	public List findByOstate(Object ostate) {
-		return findByProperty(OSTATE, ostate);
+	public List findByOpayState(Object opayState) {
+		return findByProperty(OPAY_STATE, opayState);
 	}
 
 	public List findByOnum(Object onum) {
 		return findByProperty(ONUM, onum);
+	}
+
+	public List findByOno(Object ono) {
+		return findByProperty(ONO, ono);
+	}
+
+	public List findByOsendState(Object osendState) {
+		return findByProperty(OSEND_STATE, osendState);
 	}
 
 	public List findAll() {

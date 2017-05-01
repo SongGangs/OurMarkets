@@ -4,6 +4,8 @@
 package ourmarket.services.imp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import ourmarket.daos.UserDAO;
@@ -29,6 +31,7 @@ public class UserServiceImp implements IUserService {
 	 * ourmarket.services.IUserService#CheckuNickNameIsExist(java.lang.String)
 	 * 检查用户名是否存在
 	 */
+	@Cacheable(value = "userCache", key = "#uNickName")
 	@Override
 	public boolean CheckuNickNameIsExist(String uNickName) {
 		int result = userdao.findByUnickName(uNickName).size();
@@ -45,6 +48,7 @@ public class UserServiceImp implements IUserService {
 	 * @see ourmarket.services.IUserService#AddUser(ourmarket.models.User) //
 	 * 添加用户
 	 */
+	@CachePut(value = "userCache", key = "#result.getUnickName()", condition = "#result!=null")
 	@Override
 	public User AddUser(User user) {
 		if (!CheckuNickNameIsExist(user.getUnickName())) {
@@ -52,7 +56,6 @@ public class UserServiceImp implements IUserService {
 		} else {
 			return null;
 		}
-
 	}
 
 	/*
@@ -61,6 +64,7 @@ public class UserServiceImp implements IUserService {
 	 * @see ourmarket.services.IUserService#IdentifyLoginInfo(java.lang.String,
 	 * java.lang.String) 检查账号信息是个正确
 	 */
+
 	@Override
 	public User IdentifyLoginInfo(String uNickName, String uPassword) {
 		if (CheckuNickNameIsExist(uNickName)) {
@@ -81,6 +85,7 @@ public class UserServiceImp implements IUserService {
 	 * @see ourmarket.services.IUserService#GetIdByNickName(java.lang.String)
 	 * 根据用户名查找ID
 	 */
+	@Cacheable(value = "userCache", key = "#result", condition = "#result>0")
 	@Override
 	public int GetIdByNickName(String uNickName) {
 		if (CheckuNickNameIsExist(uNickName)) {

@@ -15,8 +15,10 @@ public class Orders implements java.io.Serializable {
 	private long gid;
 	private Date otime;
 	private float omoney;
-	private short ostate;
+	private short opayState;
 	private Integer onum;
+	private String ono;
+	private short osendState;
 
 	// Constructors
 
@@ -25,21 +27,26 @@ public class Orders implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Orders(Date otime, float omoney, short ostate, Integer onum) {
+	public Orders(Date otime, float omoney, short opayState, Integer onum, String ono, short osendState) {
 		this.otime = otime;
 		this.omoney = omoney;
-		this.ostate = ostate;
+		this.opayState = opayState;
 		this.onum = onum;
+		this.ono = ono;
+		this.osendState = osendState;
 	}
 
 	/** full constructor */
-	public Orders(Integer uid, long gid, Date otime, float omoney, short ostate, Integer onum) {
+	public Orders(Integer uid, long gid, Date otime, float omoney, short opayState, Integer onum, String ono,
+			short osendState) {
 		this.uid = uid;
 		this.gid = gid;
 		this.otime = otime;
 		this.omoney = omoney;
-		this.ostate = ostate;
+		this.opayState = opayState;
 		this.onum = onum;
+		this.ono = ono;
+		this.osendState = osendState;
 	}
 
 	// Property accessors
@@ -84,12 +91,12 @@ public class Orders implements java.io.Serializable {
 		this.omoney = omoney;
 	}
 
-	public short getOstate() {
-		return this.ostate;
+	public short getOpayState() {
+		return this.opayState;
 	}
 
-	public void setOstate(short ostate) {
-		this.ostate = ostate;
+	public void setOpayState(short opayState) {
+		this.opayState = opayState;
 	}
 
 	public Integer getOnum() {
@@ -98,6 +105,22 @@ public class Orders implements java.io.Serializable {
 
 	public void setOnum(Integer onum) {
 		this.onum = onum;
+	}
+
+	public String getOno() {
+		return this.ono;
+	}
+
+	public void setOno(String ono) {
+		this.ono = ono;
+	}
+
+	public short getOsendState() {
+		return this.osendState;
+	}
+
+	public void setOsendState(short osendState) {
+		this.osendState = osendState;
 	}
 
 }

@@ -51,4 +51,17 @@
    	 <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
     
+    
+    <!-- xml方式配置echcache -->
+<!--   
+  <cache:annotation-driven cache-manager="cacheManager" />   
+
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">  
+        <property name="cacheManager" ref="ehcache"></property>  
+    </bean>  
+
+    <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
+        <property name="configLocation" value="classpath:ourmarket/encache/ehcache.xml"></property>  
+    </bean>
+    -->
 </beans>

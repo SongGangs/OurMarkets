@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ourmarket.controllers.ajax;
+package ourmarket.ajaxcontrollers;
 
 import java.util.HashMap;
 import java.util.Map;

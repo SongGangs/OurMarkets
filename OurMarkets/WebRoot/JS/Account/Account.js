@@ -48,11 +48,11 @@ $(function() {
 					notEmpty : { /*非空提示*/
 						message : '用户名不能为空'
 					},
-					stringLength : {
-						min : 4,
-						max : 30,
-						message : '用户名长度必须在4到30之间'
-					},
+//					stringLength : {
+//						min : 4,
+//						max : 30,
+//						message : '用户名长度必须在4到30之间'
+//					},
 					threshold : 4, //有4字符以上才发送ajax请求，（input中输入一个字符，插件会向服务器发送一次，设置限制，4字符以上才开始）
 					remote : { //ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}  
 						url : '/OurMarkets/API/Account/CheckuNickNameIsExist', //验证地址
