@@ -44,7 +44,7 @@
 						type="text" name="username" class="form-control "
 						placeholder="请输入用户名" />
 				</div>
-				<div class="input-group ">
+				<div class="input-group " style="margin-top:10px;">
 					<span class="input-group-addon"><i
 						class="glyphicon glyphicon-lock"></i></span> <input id="login_password"
 						type="password" name="password" class="form-control "
