@@ -16,7 +16,8 @@
     <!-- 设置注解进行扫描的包 -->
 	<context:component-scan base-package="ourmarket.ajaxcontrollers">
 		<!-- 只扫描控制器 -->
-		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter 
+		type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	<!-- 配置mvc注解驱动 -->
 	 <mvc:annotation-driven>

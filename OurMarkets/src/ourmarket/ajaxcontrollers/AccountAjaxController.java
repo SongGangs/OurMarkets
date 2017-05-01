@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ourmarket.componet.IMessageUtility;
 import ourmarket.models.User;
-import ourmarket.services.imp.UserServiceImp;
+import ourmarket.services.IUserService;
 
 /***
  * 
@@ -27,8 +27,10 @@ import ourmarket.services.imp.UserServiceImp;
 @Controller
 @RequestMapping("/Account")
 public class AccountAjaxController {
+
+	// 在自动注入时使用@Autowired时需要用接口而不能用实现类
 	@Autowired
-	private UserServiceImp userServiceImp = null;
+	private IUserService userServiceImp = null;
 	@Autowired
 	private IMessageUtility messageUtilityImpl = null;
 	private String m_securityCode = "";
