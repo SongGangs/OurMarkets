@@ -14,6 +14,7 @@
 <meta http-equiv="description" content="This is my page">
 <title></title>
 <script src="/OurMarkets/JS/Common/jquery-1.10.2.min.js"></script>
+<script src="/OurMarkets/JS/Common/jquery.cookie.js"></script>
 <script src="/OurMarkets/Resources/layer/layer.js"></script>
 <script src="/OurMarkets/JS/Common/jquery.validate.min.js"></script>
 <script src="/OurMarkets/JS/Common/bootstrapValidator.min.js"></script>
@@ -51,7 +52,7 @@
 						placeholder="请输入密码" />
 				</div>
 				<div class="checkbox  mycheckbox">
-					<label><input type="checkbox">记住密码</label>
+					<label><input id="login_rememberme" type="checkbox">记住密码</label>
 				</div>
 				<div class="text-right">
 					<input type="button" id="loginBtn" class="btn btn-primary"
@@ -107,7 +108,7 @@
 
 				<div class="text-right">
 					<input type="button" id="registerBtn" class="btn btn-primary"
-						value="登录"> <input type="button"
+						value="注册"> <input type="button"
 						class="btn btn btn-danger" onclick=" layer.closeAll('page'); "
 						value="取消">
 				</div>

@@ -152,6 +152,7 @@ $(function() {
 				validator_login.resetForm(); //重置表单
 			}
 		});
+		AutoFillCookie(); //查看Cookie记录里面是否有保存信息 有就自动填充
 	});
 	$(".a_register").on("click", function() {
 		layer.closeAll('page');
@@ -182,6 +183,7 @@ $(function() {
 					icon : 1,
 					time : 1000
 				});
+				$("#querySecurityCodeBtn").attr("disabled", true);
 			} else {
 				layer.msg('短信验证码发送失败', {
 					icon : 5,
@@ -205,6 +207,10 @@ $(function() {
 							time : 1000
 						});
 						layer.closeAll('page');
+						//如果记住账户密码被选中 就将登录信息存到Cookie中
+						if ($("#login_rememberme").is(':checked')) {
+							CookieUserInfo();
+						}
 					} else {
 						layer.msg('身份验证失败', {
 							icon : 5,
@@ -240,4 +246,24 @@ $(function() {
 				});
 		}
 	});
+
+	//初始化页面时验证是否记住了密码 
+	function AutoFillCookie() {
+		//当用户名和密码都不为null 并且也不为undefined时进行调用
+		if ($.cookie("username") != undefined && $.cookie("password") != undefined) {
+			$("#login_username").val($.cookie("username"));
+			$("#login_password").val($.cookie("password"));
+			$("#login_rememberme").attr('checked', 'true');
+		}
+	}
+	//Cookie用户登录信息
+	function CookieUserInfo() {
+		$.cookie("username", $.trim($("#login_username").val()), {
+			expires : 7
+		}); // 存储一个带7天期限的 cookie   
+		$.cookie("password", $("#login_password").val(), {
+			expires : 7
+		}); // 存储一个带7天期限的 cookie   
+	}
+
 });
