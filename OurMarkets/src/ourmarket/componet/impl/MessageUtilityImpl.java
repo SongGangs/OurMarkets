@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ourmarket.componet;
+package ourmarket.componet.impl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,6 +12,8 @@ import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.AlibabaAliqinFcSmsNumSendRequest;
 import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
+
+import ourmarket.componet.IMessageUtility;
 
 /**
  * Title:MessageUtilityImpl

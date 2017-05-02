@@ -20,7 +20,7 @@ import ourmarket.services.IUserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
-public class UserServiceImpTest {
+public class UserServiceImplTest {
 	@Autowired
 	IUserService userservice;
 	@Autowired

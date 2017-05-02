@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ourmarket.services.imp;
+package ourmarket.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
@@ -20,7 +20,7 @@ import ourmarket.services.IUserService;
  * @date : 2017年4月29日
  */
 @Service
-public class UserServiceImp implements IUserService {
+public class UserServiceImpl implements IUserService {
 	@Autowired
 	private UserDAO userdao = null;
 
