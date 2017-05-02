@@ -8,8 +8,8 @@ public class ImageLibrary implements java.io.Serializable {
 
 	// Fields
 
-	private long imageId;
-	private Integer imageListId;
+	private Long imageId;
+	private long imageListId;
 	private String imageSrc;
 
 	// Constructors
@@ -24,26 +24,26 @@ public class ImageLibrary implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public ImageLibrary(Integer imageListId, String imageSrc) {
+	public ImageLibrary(long imageListId, String imageSrc) {
 		this.imageListId = imageListId;
 		this.imageSrc = imageSrc;
 	}
 
 	// Property accessors
 
-	public long getImageId() {
+	public Long getImageId() {
 		return this.imageId;
 	}
 
-	public void setImageId(long imageId) {
+	public void setImageId(Long imageId) {
 		this.imageId = imageId;
 	}
 
-	public Integer getImageListId() {
+	public long getImageListId() {
 		return this.imageListId;
 	}
 
-	public void setImageListId(Integer imageListId) {
+	public void setImageListId(long imageListId) {
 		this.imageListId = imageListId;
 	}
 

@@ -8,7 +8,7 @@ public class Adress implements java.io.Serializable {
 
 	// Fields
 
-	private long aid;
+	private Long aid;
 	private Integer uid;
 	private String ainfo;
 	private short astate;
@@ -34,11 +34,11 @@ public class Adress implements java.io.Serializable {
 
 	// Property accessors
 
-	public long getAid() {
+	public Long getAid() {
 		return this.aid;
 	}
 
-	public void setAid(long aid) {
+	public void setAid(Long aid) {
 		this.aid = aid;
 	}
 

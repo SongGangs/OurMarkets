@@ -8,7 +8,7 @@ public class ImageList implements java.io.Serializable {
 
 	// Fields
 
-	private long imageListId;
+	private Long imageListId;
 
 	// Constructors
 
@@ -18,11 +18,11 @@ public class ImageList implements java.io.Serializable {
 
 	// Property accessors
 
-	public long getImageListId() {
+	public Long getImageListId() {
 		return this.imageListId;
 	}
 
-	public void setImageListId(long imageListId) {
+	public void setImageListId(Long imageListId) {
 		this.imageListId = imageListId;
 	}
 

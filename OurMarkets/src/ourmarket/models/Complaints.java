@@ -13,7 +13,7 @@ public class Complaints implements java.io.Serializable {
 	private Integer complainId;
 	private Integer uid;
 	private Integer useUId;
-	private long imageListId;
+	private Long imageListId;
 	private String complainContent;
 	private Date complainTime;
 	private String complainTitle;
@@ -34,7 +34,7 @@ public class Complaints implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Complaints(Integer uid, Integer useUId, long imageListId, String complainContent, Date complainTime,
+	public Complaints(Integer uid, Integer useUId, Long imageListId, String complainContent, Date complainTime,
 			String complainTitle, short complainState) {
 		this.uid = uid;
 		this.useUId = useUId;
@@ -71,11 +71,11 @@ public class Complaints implements java.io.Serializable {
 		this.useUId = useUId;
 	}
 
-	public long getImageListId() {
+	public Long getImageListId() {
 		return this.imageListId;
 	}
 
-	public void setImageListId(long imageListId) {
+	public void setImageListId(Long imageListId) {
 		this.imageListId = imageListId;
 	}
 

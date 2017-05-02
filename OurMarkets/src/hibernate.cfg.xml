@@ -22,7 +22,6 @@
 		<property name="connection.characterEncoding">UTF-8</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<mapping resource="ourmarket/models/ImageLibrary.hbm.xml" />
 		<mapping resource="ourmarket/models/Role.hbm.xml" />
 		<mapping resource="ourmarket/models/Message.hbm.xml" />
 		<mapping resource="ourmarket/models/Orders.hbm.xml" />
@@ -36,7 +35,7 @@
 		<mapping resource="ourmarket/models/Goods.hbm.xml" />
 		<mapping resource="ourmarket/models/GoodsReturn.hbm.xml" />
 		<mapping resource="ourmarket/models/Complaints.hbm.xml" />
-
+		<mapping resource="ourmarket/models/ImageLibrary.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>

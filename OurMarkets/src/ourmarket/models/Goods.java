@@ -10,9 +10,9 @@ public class Goods implements java.io.Serializable {
 
 	// Fields
 
-	private long gid;
+	private Long gid;
 	private Integer uid;
-	private long imageListId;
+	private Long imageListId;
 	private String gname;
 	private Integer gnum;
 	private Integer gviewNum;
@@ -42,7 +42,7 @@ public class Goods implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Goods(Integer uid, long imageListId, String gname, Integer gnum, Integer gviewNum, Date gproductTime,
+	public Goods(Integer uid, Long imageListId, String gname, Integer gnum, Integer gviewNum, Date gproductTime,
 			String gtitle, float gprice, String gbrifeIntroduction, short gstate, short gtype) {
 		this.uid = uid;
 		this.imageListId = imageListId;
@@ -59,11 +59,11 @@ public class Goods implements java.io.Serializable {
 
 	// Property accessors
 
-	public long getGid() {
+	public Long getGid() {
 		return this.gid;
 	}
 
-	public void setGid(long gid) {
+	public void setGid(Long gid) {
 		this.gid = gid;
 	}
 
@@ -75,11 +75,11 @@ public class Goods implements java.io.Serializable {
 		this.uid = uid;
 	}
 
-	public long getImageListId() {
+	public Long getImageListId() {
 		return this.imageListId;
 	}
 
-	public void setImageListId(long imageListId) {
+	public void setImageListId(Long imageListId) {
 		this.imageListId = imageListId;
 	}
 

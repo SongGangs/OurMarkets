@@ -12,7 +12,7 @@ public class Comments implements java.io.Serializable {
 
 	private Integer commentId;
 	private Integer uid;
-	private long imageListId;
+	private Long imageListId;
 	private long gid;
 	private String comments;
 	private Date commentTime;
@@ -30,7 +30,7 @@ public class Comments implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Comments(Integer uid, long imageListId, long gid, String comments, Date commentTime) {
+	public Comments(Integer uid, Long imageListId, long gid, String comments, Date commentTime) {
 		this.uid = uid;
 		this.imageListId = imageListId;
 		this.gid = gid;
@@ -56,11 +56,11 @@ public class Comments implements java.io.Serializable {
 		this.uid = uid;
 	}
 
-	public long getImageListId() {
+	public Long getImageListId() {
 		return this.imageListId;
 	}
 
-	public void setImageListId(long imageListId) {
+	public void setImageListId(Long imageListId) {
 		this.imageListId = imageListId;
 	}
 

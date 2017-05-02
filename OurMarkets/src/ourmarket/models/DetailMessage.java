@@ -10,7 +10,7 @@ public class DetailMessage implements java.io.Serializable {
 
 	// Fields
 
-	private long dmId;
+	private Long dmId;
 	private Integer mid;
 	private String mcontent;
 	private Date mtime;
@@ -36,11 +36,11 @@ public class DetailMessage implements java.io.Serializable {
 
 	// Property accessors
 
-	public long getDmId() {
+	public Long getDmId() {
 		return this.dmId;
 	}
 
-	public void setDmId(long dmId) {
+	public void setDmId(Long dmId) {
 		this.dmId = dmId;
 	}
 

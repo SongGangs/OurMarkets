@@ -67,7 +67,6 @@ public class AccountAjaxController {
 		user.setUnickName(uNickName);
 		user.setUpassword(uPassword);
 		user.setRid(1);
-		user.setImageListId(1);
 		User users = userServiceImp.AddUser(user);
 		Map<String, Object> map = new HashMap<String, Object>();
 		if (users == null) {

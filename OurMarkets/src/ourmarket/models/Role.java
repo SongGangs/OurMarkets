@@ -8,7 +8,7 @@ public class Role implements java.io.Serializable {
 
 	// Fields
 
-	private short rid;
+	private Short rid;
 	private String rinfo;
 
 	// Constructors
@@ -24,11 +24,11 @@ public class Role implements java.io.Serializable {
 
 	// Property accessors
 
-	public short getRid() {
+	public Short getRid() {
 		return this.rid;
 	}
 
-	public void setRid(short rid) {
+	public void setRid(Short rid) {
 		this.rid = rid;
 	}
 

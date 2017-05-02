@@ -10,7 +10,7 @@ public class GoodsOff implements java.io.Serializable {
 
 	// Fields
 
-	private short goffId;
+	private Short goffId;
 	private Integer uid;
 	private long gid;
 	private String goffReason;
@@ -38,11 +38,11 @@ public class GoodsOff implements java.io.Serializable {
 
 	// Property accessors
 
-	public short getGoffId() {
+	public Short getGoffId() {
 		return this.goffId;
 	}
 
-	public void setGoffId(short goffId) {
+	public void setGoffId(Short goffId) {
 		this.goffId = goffId;
 	}
 

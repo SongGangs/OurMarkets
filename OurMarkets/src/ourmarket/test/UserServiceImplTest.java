@@ -35,7 +35,6 @@ public class UserServiceImplTest {
 	@Test
 	public void testAddUser() {
 		User user = new User();
-		user.setImageListId(1);
 		user.setRid(1);
 		user.setUnickName("测试");
 		user.setUphone("18281714844");

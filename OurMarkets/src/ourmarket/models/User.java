@@ -10,12 +10,12 @@ public class User implements java.io.Serializable {
 
 	private Integer uid;
 	private Integer rid;
-	private long imageListId;
+	private Long imageListId;
 	private String unickName;
 	private String uphone;
 	private String uemial;
 	private Integer ucredit;
-	private short ugender;
+	private Short ugender;
 	private String upassword;
 
 	// Constructors
@@ -32,8 +32,8 @@ public class User implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public User(Integer rid, long imageListId, String unickName, String uphone, String uemial, Integer ucredit,
-			short ugender, String upassword) {
+	public User(Integer rid, Long imageListId, String unickName, String uphone, String uemial, Integer ucredit,
+			Short ugender, String upassword) {
 		this.rid = rid;
 		this.imageListId = imageListId;
 		this.unickName = unickName;
@@ -62,11 +62,11 @@ public class User implements java.io.Serializable {
 		this.rid = rid;
 	}
 
-	public long getImageListId() {
+	public Long getImageListId() {
 		return this.imageListId;
 	}
 
-	public void setImageListId(long imageListId) {
+	public void setImageListId(Long imageListId) {
 		this.imageListId = imageListId;
 	}
 
@@ -102,11 +102,11 @@ public class User implements java.io.Serializable {
 		this.ucredit = ucredit;
 	}
 
-	public short getUgender() {
+	public Short getUgender() {
 		return this.ugender;
 	}
 
-	public void setUgender(short ugender) {
+	public void setUgender(Short ugender) {
 		this.ugender = ugender;
 	}
 

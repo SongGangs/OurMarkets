@@ -10,7 +10,7 @@
             <column name="ImageID" />
             <generator class="identity" />
         </id>
-        <property name="imageListId" type="integer">
+        <property name="imageListId" type="long">
             <column name="ImageListID" />
         </property>
         <property name="imageSrc" type="string">
