@@ -5,14 +5,13 @@
 <html>
 <head>
 
-<title>My JSP 'home.jsp' starting page</title>
+<title>OurMarkets</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<title></title>
 <script src="/OurMarkets/JS/Common/jquery-1.10.2.min.js"></script>
 <script src="/OurMarkets/JS/Common/jquery.cookie.js"></script>
 <script src="/OurMarkets/Resources/layer/layer.js"></script>
@@ -27,7 +26,7 @@
 </head>
 
 <body>
-	<div>
+	<div style="height:500px">
 		<ul class="nav navbar-nav navbar-right">
 			<li><a class="a_register" href="javascript:;"><span
 					class="glyphicon glyphicon-user"></span> 注册</a></li>
@@ -35,6 +34,7 @@
 					class="glyphicon glyphicon-log-in"></span> 登录</a></li>
 		</ul>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 	<!--登陆界面-->
 	<div id="login" class="floatDiv">
 		<div class="well">
