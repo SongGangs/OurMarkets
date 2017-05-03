@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,7 +27,7 @@ import ourmarket.services.IUserService;
  * @author SGang
  * @date 2017年5月2日下午5:14:43
  */
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private IUserService userService = null;
@@ -46,9 +47,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 	private List<GrantedAuthority> getGrantedAuthorities(User user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 
-		// authorities.add(new
-		// SimpleGrantedAuthority(userService.findUserRole(userName,
-		// password)));
+		authorities.add(new SimpleGrantedAuthority(
+				userService.getRoleByuNickNameAnduPassword(user.getUnickName(), user.getUpassword())));
 		System.out.print("authorities :" + authorities);
 		return authorities;
 	}

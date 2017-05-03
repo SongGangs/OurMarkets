@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import ourmarket.componet.IMessageUtility;
+import ourmarket.message.services.IMessageUtilityService;
 
 /**
  * Title:MessageUtilityImplTest
@@ -29,7 +29,7 @@ import ourmarket.componet.IMessageUtility;
 public class MessageUtilityImplTest {
 
 	@Autowired
-	private IMessageUtility messageUtility;
+	private IMessageUtilityService messageUtility;
 
 	@Test
 	public void testCheckPhoneNumberIsExist() {

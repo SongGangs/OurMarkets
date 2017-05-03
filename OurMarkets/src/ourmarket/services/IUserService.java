@@ -22,4 +22,6 @@ public interface IUserService {
 	public int getIdByNickName(String uNickName);
 
 	public User getUserByuNickName(String uNickName);
+
+	public String getRoleByuNickNameAnduPassword(String uNickName, String uPassword);
 }

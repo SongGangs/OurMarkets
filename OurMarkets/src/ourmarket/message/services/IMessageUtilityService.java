@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ourmarket.componet;
+package ourmarket.message.services;
 
 /**
  * 
@@ -12,7 +12,7 @@ package ourmarket.componet;
  * @author SGang
  * @date 2017年4月30日上午10:56:28
  */
-public interface IMessageUtility {
+public interface IMessageUtilityService {
 	public boolean CheckPhoneNumberIsExist(String phoneNumber);
 
 	public String SendSecurityCode(String phoneNumber, String SecurityType);

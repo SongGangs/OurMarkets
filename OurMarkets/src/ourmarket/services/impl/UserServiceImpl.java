@@ -134,6 +134,24 @@ public class UserServiceImpl implements IUserService {
 		}
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ourmarket.services.IUserService#getRoleByuNickNameAnduPassword(java.lang.
+	 * String, java.lang.String)
+	 * 
+	 * 更加用户名密码查看角色
+	 */
+	@Override
+	public String getRoleByuNickNameAnduPassword(String uNickName, String uPassword) {
+		User user = identifyLoginInfo(uNickName, uPassword);
+		if (user != null) {
+			return user.getRid() == 0 ? "User" : "Admin";
+		}
+		return null;
+	}
+
 	private Element createUserElement(String userName, String password, String role, Document doc) {
 		Element user = doc.createElement("user");
 		user.setAttribute("username", userName);

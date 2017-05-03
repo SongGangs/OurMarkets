@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ourmarket.componet.impl;
+package ourmarket.message.services.impl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,7 +13,7 @@ import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.AlibabaAliqinFcSmsNumSendRequest;
 import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
 
-import ourmarket.componet.IMessageUtility;
+import ourmarket.message.services.IMessageUtilityService;
 
 /**
  * Title:MessageUtilityImpl
@@ -24,7 +24,7 @@ import ourmarket.componet.IMessageUtility;
  * @date 2017年4月29日下午10:57:09
  */
 @Service
-public class MessageUtilityImpl implements IMessageUtility {
+public class MessageUtilityServiceImpl implements IMessageUtilityService {
 
 	private String url = "http://gw.api.taobao.com/router/rest"; // 阿里服务网址
 	private String AppKey = "23401777";

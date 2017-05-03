@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ourmarket.componet.IMessageUtility;
+import ourmarket.message.services.IMessageUtilityService;
 import ourmarket.models.User;
 import ourmarket.services.IUserService;
 
@@ -32,7 +32,7 @@ public class AccountAjaxController {
 	@Autowired
 	private IUserService userServiceImp = null;
 	@Autowired
-	private IMessageUtility messageUtilityImpl = null;
+	private IMessageUtilityService messageUtilityImpl = null;
 	private String m_securityCode = "";
 
 	// @ResponseBody 将内容或对象作为 HTTP
