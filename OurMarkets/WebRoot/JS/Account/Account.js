@@ -232,6 +232,8 @@ $(function() {
 						//如果记住账户密码被选中 就将登录信息存到Cookie中
 						if ($("#login_rememberme").is(':checked')) {
 							CookieUserInfo();
+						}else{
+							ClearCookie();
 						}
 						$("#login-from").submit();
 					} else {
@@ -287,6 +289,11 @@ $(function() {
 		$.cookie("password", $("#login_password").val(), {
 			expires : 7
 		}); // 存储一个带7天期限的 cookie   
+	}
+	//清楚用户信息
+	function ClearCookie() {
+		$.cookie('username', '', { expires: -1 });
+		$.cookie('password', '', { expires: -1 });
 	}
 
 });
