@@ -4,7 +4,7 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-   
+   <!-- 加载Spring的配置文件 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <!-- 应用上下文配置文件 -->
@@ -37,7 +37,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   
-        <!-- 权限拦截器 -->
+  <!-- SpringSecurity 核心过滤器配置 --> 
 <filter>
 	<filter-name>springSecurityFilterChain</filter-name>
 	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

@@ -14,7 +14,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.transaction.annotation.Transactional;
 
 import ourmarket.models.User;
 import ourmarket.services.IUserService;
@@ -32,9 +31,9 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private IUserService userService = null;
 
-	@Transactional(readOnly = true)
-	public UserDetails loadUserByUsername(String uNickName) throws UsernameNotFoundException {
-		User user = userService.getUserByuNickName(uNickName);
+	@Override
+	public UserDetails loadUserByUsername(String arg0) throws UsernameNotFoundException {
+		User user = userService.getUserByuNickName(arg0);
 		System.out.println("User : " + user);
 		if (user == null) {
 			System.out.println("User not found");

@@ -3,29 +3,10 @@
  */
 package ourmarket.services.impl;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.annotation.Resource;
-import javax.servlet.ServletContext;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
 
 import ourmarket.daos.UserDAO;
 import ourmarket.models.User;
@@ -40,9 +21,6 @@ import ourmarket.services.IUserService;
  */
 @Service
 public class UserServiceImpl implements IUserService {
-	private static Logger logger = Logger.getLogger(UserServiceImpl.class);
-	@Resource
-	private ServletContext servletContext;
 	@Autowired
 	private UserDAO userdao = null;
 
@@ -147,48 +125,9 @@ public class UserServiceImpl implements IUserService {
 	public String getRoleByuNickNameAnduPassword(String uNickName, String uPassword) {
 		User user = identifyLoginInfo(uNickName, uPassword);
 		if (user != null) {
-			return user.getRid() == 0 ? "User" : "Admin";
+			return user.getRid() == 0 ? "ROLE_USER" : "ROLE_ADMIN";
 		}
 		return null;
-	}
-
-	private Element createUserElement(String userName, String password, String role, Document doc) {
-		Element user = doc.createElement("user");
-		user.setAttribute("username", userName);
-		user.setAttribute("password", password);
-		user.setAttribute("role", role);
-		return user;
-	}
-
-	private boolean write(Source source, Result result) {
-		TransformerFactory tffactory = TransformerFactory.newInstance();
-		Transformer tr;
-		try {
-			tr = tffactory.newTransformer();
-			tr.transform(source, result);
-			return true;
-		} catch (TransformerConfigurationException e) {
-			logger.error(e.getMessage());
-			e.printStackTrace();
-
-		} catch (TransformerException e) {
-			logger.error(e.getMessage());
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-	private Document getDocument(File file) throws ParserConfigurationException, SAXException, IOException {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.parse(file);
-		return doc;
-	}
-
-	private File getUserXmlFile() {
-		String path = servletContext.getRealPath("/WEB-INF/musicstore-users.xml");
-		File file = new File(path);
-		return file;
 	}
 
 }

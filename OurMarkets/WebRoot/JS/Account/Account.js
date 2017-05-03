@@ -233,6 +233,7 @@ $(function() {
 						if ($("#login_rememberme").is(':checked')) {
 							CookieUserInfo();
 						}
+						$("#login-from").submit();
 					} else {
 						layer.msg('身份验证失败', {
 							icon : 5,

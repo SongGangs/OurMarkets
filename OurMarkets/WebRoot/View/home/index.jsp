@@ -38,7 +38,7 @@
 	<!--登陆界面-->
 	<div id="login" class="floatDiv">
 		<div class="well">
-			<form id="login-from" method="post" class="form-horizontal" action="/OurMarkets/j_spring_security_check">
+			<form id="login-from" method="POST" class="form-horizontal" action='/OurMarkets/j_spring_security_check'>
 				<div class="input-group ">
 					<span class="input-group-addon"><i
 						class="glyphicon glyphicon-user"></i></span> <input id="login_username"
