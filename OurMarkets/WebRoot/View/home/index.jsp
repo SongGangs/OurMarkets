@@ -101,7 +101,7 @@
 					<span class="input-group-addon"><i
 						class="glyphicon glyphicon-envelope"></i></span> <input
 						class=" form-control " id="register_identifyCode"
-						style="width: 200px" name="identifyCode" type="text"
+						style="width: 190px" name="identifyCode" type="text"
 						placeholder="请输入验证码"> <input type="button" id="querySecurityCodeBtn" class="btn"
 						style="margin-left: 10px" value=" 获取验证码" />
 				</div>

@@ -13,11 +13,13 @@ import ourmarket.models.User;
  * @date 2017年4月29日下午4:18:17
  */
 public interface IUserService {
-	public boolean CheckuNickNameIsExist(String uNickName);
+	public boolean checkuNickNameIsExist(String uNickName);
 
-	public User AddUser(User user);
+	public User addUser(User user);
 
-	public User IdentifyLoginInfo(String uNickName, String uPassword);
+	public User identifyLoginInfo(String uNickName, String uPassword);
 
-	public int GetIdByNickName(String uNickName);
+	public int getIdByNickName(String uNickName);
+
+	public User getUserByuNickName(String uNickName);
 }

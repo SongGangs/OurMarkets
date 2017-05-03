@@ -43,7 +43,7 @@ public class AccountAjaxController {
 	@ResponseBody
 	@RequestMapping(value = "/Login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Map<String, Object> Login(String uNickName, String uPassword) {
-		User user = userServiceImp.IdentifyLoginInfo(uNickName, uPassword);
+		User user = userServiceImp.identifyLoginInfo(uNickName, uPassword);
 		Map<String, Object> map = new HashMap<String, Object>();
 		if (user == null) {
 			map.put("msg", "error");
@@ -67,7 +67,7 @@ public class AccountAjaxController {
 		user.setUnickName(uNickName);
 		user.setUpassword(uPassword);
 		user.setRid(1);
-		User users = userServiceImp.AddUser(user);
+		User users = userServiceImp.addUser(user);
 		Map<String, Object> map = new HashMap<String, Object>();
 		if (users == null) {
 			map.put("msg", "error");
@@ -113,7 +113,7 @@ public class AccountAjaxController {
 	@ResponseBody
 	@RequestMapping(value = "/CheckuNickNameIsExist", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Map<String, Boolean> CheckuNickNameIsExist(String uNickName) {
-		boolean flag = userServiceImp.CheckuNickNameIsExist(uNickName);
+		boolean flag = userServiceImp.checkuNickNameIsExist(uNickName);
 		Map<String, Boolean> map = new HashMap<>();
 		if (flag)
 			map.put("valid", false);

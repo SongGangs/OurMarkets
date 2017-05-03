@@ -28,8 +28,8 @@ public class UserServiceImplTest {
 
 	@Test
 	public void testCheckuNickNameIsExist() {
-		assertTrue(userservice.CheckuNickNameIsExist("宋刚"));
-		assertFalse(userservice.CheckuNickNameIsExist("宋刚2"));
+		assertTrue(userservice.checkuNickNameIsExist("宋刚"));
+		assertFalse(userservice.checkuNickNameIsExist("宋刚2"));
 	}
 
 	@Test
@@ -41,13 +41,13 @@ public class UserServiceImplTest {
 		user.setUpassword("123456a");
 		// assertEquals(userservice.AddUser(user), (User)
 		// userdao.findByUnickName("测试").get(0));
-		assertEquals(userservice.AddUser(user), null);
+		assertEquals(userservice.addUser(user), null);
 	}
 
 	@Test
 	public void testIdentifyLoginInfo() {
-		assertTrue(userservice.IdentifyLoginInfo("宋刚", "sg123456").getUid() == 2);
-		assertNull(userservice.IdentifyLoginInfo("宋刚", "sg1234567"));
+		assertTrue(userservice.identifyLoginInfo("宋刚", "sg123456").getUid() == 2);
+		assertNull(userservice.identifyLoginInfo("宋刚", "sg1234567"));
 
 	}
 
