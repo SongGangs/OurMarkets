@@ -1,4 +1,4 @@
-package ourmarket.component;
+package ourmarket.spring.security;
 
 import java.io.IOException;
 

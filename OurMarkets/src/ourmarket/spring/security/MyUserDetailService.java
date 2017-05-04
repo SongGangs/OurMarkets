@@ -3,7 +3,7 @@
  * 
  */
 
-package ourmarket.services.impl;
+package ourmarket.spring.security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +26,13 @@ import ourmarket.services.IUserService;
  * @author SGang
  * @date 2017年5月2日下午5:14:43
  */
-public class CustomUserDetailsServiceImpl implements UserDetailsService {
+public class MyUserDetailService implements UserDetailsService {
 
 	@Autowired
 	private IUserService userService = null;
 
+	// 登陆验证时，通过username获取用户的所有权限信息，
+	// 并返回User放到spring的全局缓存SecurityContextHolder中，以供授权器使用
 	@Override
 	public UserDetails loadUserByUsername(String arg0) throws UsernameNotFoundException {
 		User user = userService.getUserByuNickName(arg0);

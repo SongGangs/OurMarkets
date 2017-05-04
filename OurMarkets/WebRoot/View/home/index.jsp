@@ -41,23 +41,24 @@
 			<form id="login-from" method="POST" class="form-horizontal" action='/OurMarkets/j_spring_security_check'>
 				<div class="input-group ">
 					<span class="input-group-addon"><i
-						class="glyphicon glyphicon-user"></i></span> <input id="login_username"
-						type="text" name="username" class="form-control "
-						placeholder="请输入用户名" />
+						class="glyphicon glyphicon-user"></i></span>
+						 <input id="login_username" type="text" name="j_username" class="form-control "
+							placeholder="请输入用户名" />
 				</div>
 				<div class="input-group " style="margin-top:10px;">
 					<span class="input-group-addon"><i
-						class="glyphicon glyphicon-lock"></i></span> <input id="login_password"
-						type="password" name="password" class="form-control "
+						class="glyphicon glyphicon-lock"></i></span>
+						 <input id="login_password" type="password" name="j_password" class="form-control "
 						placeholder="请输入密码" />
 				</div>
 				<div class="checkbox  mycheckbox">
-					<label><input id="login_rememberme" type="checkbox">记住密码</label>
+					<label><input id="login_rememberme" type="checkbox" >记住密码</label>
 				</div>
 				<div class="text-right">
-					<input type="button" id="loginBtn" class="btn btn-primary"
-						value="登录"> <input type="button" class="btn btn-danger"
-						onclick=" layer.closeAll('page'); " value="取消">
+					<input type="submit" id="loginBtn" class="btn btn-primary"
+						value="登录"> 
+					<input type="button" class="btn btn-danger"
+						onclick=" layer.closeAll('page'); " value="取消" >
 				</div>
 				<a class="a_register" href="javascript:;">还没有账号？点我注册</a>
 			</form>

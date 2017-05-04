@@ -7,18 +7,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Title:SecurityController
+ * Title:TestController
  *
  * Description:
  * 
  * @author SGang
- * @date 2017年5月3日下午1:27:34
+ * @date 2017年5月4日上午11:25:48
  */
 @Controller
-@RequestMapping("/Security")
-public class SecurityController {
+public class TestController {
 	@RequestMapping("/Index")
 	public String index() {
-		return "security/index";
+		return "index";
+	}
+
+	@RequestMapping("/Other")
+	public String other() {
+		return "other";
+	}
+
+	@RequestMapping("/Login")
+	public String login() {
+		return "login";
 	}
 }
