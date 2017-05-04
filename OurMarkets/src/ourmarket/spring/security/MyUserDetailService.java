@@ -47,7 +47,6 @@ public class MyUserDetailService implements UserDetailsService {
 
 	private List<GrantedAuthority> getGrantedAuthorities(User user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-
 		authorities.add(new SimpleGrantedAuthority(
 				userService.getRoleByuNickNameAnduPassword(user.getUnickName(), user.getUpassword())));
 		System.out.print("authorities :" + authorities);

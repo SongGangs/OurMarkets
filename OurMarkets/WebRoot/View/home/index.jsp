@@ -55,7 +55,7 @@
 					<label><input id="login_rememberme" type="checkbox" >记住密码</label>
 				</div>
 				<div class="text-right">
-					<input type="submit" id="loginBtn" class="btn btn-primary"
+					<input type="button" id="loginBtn" class="btn btn-primary"
 						value="登录"> 
 					<input type="button" class="btn btn-danger"
 						onclick=" layer.closeAll('page'); " value="取消" >
